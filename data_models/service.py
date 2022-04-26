@@ -1,6 +1,7 @@
 # Programmer: Andrew Dwyer
 # Date: 4/26/22
 
+# this is the data model for the Services
 class Service:
     def __init__(self, service_id, start_datetime, service_name, description):
         self.__service_id = service_id

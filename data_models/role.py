@@ -1,6 +1,7 @@
 # Programmer: Andrew Dwyer
 # Date: 4/26/22
 
+# this is the data model for the Roles
 class Role:
     def __init__(self, role_id, role_name):
         self.__role_id = role_id

@@ -1,6 +1,7 @@
 # Programmer: Andrew Dwyer
 # Date: 4/26/22
 
+# this is the data model for the Participants
 class Participant:
     def __init__(self, service_id, person_id, role_id):
         self.__service_id = service_id
