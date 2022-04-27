@@ -64,3 +64,23 @@ class DataContext:
         # remove the person from the list of people
         self.__people.remove(person)
         return True
+
+    def create_person(self, person):
+        # add the person to the db
+        res = self.__person_handler.create_person(person)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # add the person to the list of people
+        self.__people.append(person)
+        return True
+
+    def update_person(self, person):
+        # add the person to the db
+        res = self.__person_handler.update_person(person)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # update the list with the updated person at the old index
+        self.__people[self.__people.index(person)] = person
+        return True
