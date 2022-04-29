@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-22T22:50:28.156Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="Iz5l-DYArTDt6QN8O3Vt" version="17.4.5" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-29T14:18:23.646Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="tNeJDxuf0SVTOsRMaDoV" version="17.4.5" type="github">
   <diagram id="4OQi59Qm8AY1YfnPW1HK" name="Page-1">
-    <mxGraphModel dx="946" dy="589" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1351" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,9 +9,6 @@
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-69" value="" style="whiteSpace=wrap;html=1;container=1;" parent="Rd3qPR3GxqKm1jp_kwzv-121" vertex="1">
           <mxGeometry x="81.63" y="100" width="390" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-70" value="Delete" style="whiteSpace=wrap;html=1;strokeColor=default;fillColor=#B3B3B3;" parent="Rd3qPR3GxqKm1jp_kwzv-69" vertex="1">
-          <mxGeometry x="220" y="125.71428571428571" width="46.28" height="22.857142857142854" as="geometry" />
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-71" value="Save" style="whiteSpace=wrap;html=1;strokeColor=default;fillColor=#B3B3B3;" parent="Rd3qPR3GxqKm1jp_kwzv-69" vertex="1">
           <mxGeometry x="276.62790697674404" y="125.71428571428571" width="36.279069767441854" height="22.857142857142854" as="geometry" />
@@ -37,11 +34,8 @@
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-77" value="" style="whiteSpace=wrap;html=1;" parent="Rd3qPR3GxqKm1jp_kwzv-121" vertex="1">
           <mxGeometry x="185.93232558139528" y="140" width="267.55813953488365" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-78" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Window will be used for both New and Edit. Either &quot;New&quot; or &quot;Edit&quot; will be shown depending on which action the window is used for. This window allows for the creation, updating, and deleting of person. The delete button is only displayed if the screen is used to edit.&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;" parent="Rd3qPR3GxqKm1jp_kwzv-121" vertex="1">
-          <mxGeometry y="-60" width="300" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-79" value="&lt;font style=&quot;font-size: 13px&quot;&gt;Only displayed if used as an edit screen&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;position2=0.52;direction=west;" parent="Rd3qPR3GxqKm1jp_kwzv-121" vertex="1">
-          <mxGeometry x="270" y="250" width="120" height="80" as="geometry" />
+        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-78" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Window will be used for both New and Edit. Either &quot;New&quot; or &quot;Edit&quot; will be shown depending on which action the window is used for. This window allows for the creation, updating, and of a person.&amp;nbsp;&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;" parent="Rd3qPR3GxqKm1jp_kwzv-121" vertex="1">
+          <mxGeometry y="-60" width="320" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-81" value="" style="whiteSpace=wrap;html=1;" parent="Rd3qPR3GxqKm1jp_kwzv-121" vertex="1">
           <mxGeometry x="185.93232558139528" y="180" width="267.55813953488365" height="30" as="geometry" />
@@ -51,9 +45,6 @@
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-54" value="" style="whiteSpace=wrap;html=1;container=1;" parent="Rd3qPR3GxqKm1jp_kwzv-124" vertex="1">
           <mxGeometry x="81.63" y="100" width="390" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-66" value="Delete" style="whiteSpace=wrap;html=1;strokeColor=default;fillColor=#B3B3B3;" parent="Rd3qPR3GxqKm1jp_kwzv-54" vertex="1">
-          <mxGeometry x="220" y="110" width="46.28" height="20" as="geometry" />
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-65" value="Save" style="whiteSpace=wrap;html=1;strokeColor=default;fillColor=#B3B3B3;" parent="Rd3qPR3GxqKm1jp_kwzv-54" vertex="1">
           <mxGeometry x="276.62790697674404" y="110" width="36.279069767441854" height="20" as="geometry" />
@@ -78,9 +69,6 @@
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-67" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Window will be used for both New and Edit. Either &quot;New&quot; or &quot;Edit&quot; will be shown depending on which action the window is used for. Window is both the new role and the edit role screen.&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;" parent="Rd3qPR3GxqKm1jp_kwzv-124" vertex="1">
           <mxGeometry y="-30" width="320" height="130" as="geometry" />
-        </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-68" value="&lt;font style=&quot;font-size: 13px&quot;&gt;Only displayed if used as an edit screen&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;position2=0.52;direction=west;" parent="Rd3qPR3GxqKm1jp_kwzv-124" vertex="1">
-          <mxGeometry x="259.71000000000004" y="240" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-141" value="" style="group;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1101.63" y="270" width="535" height="494" as="geometry" />
@@ -392,9 +380,6 @@
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-83" value="" style="whiteSpace=wrap;html=1;container=1;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
           <mxGeometry x="81.63" y="100" width="390" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-84" value="Delete" style="whiteSpace=wrap;html=1;strokeColor=default;fillColor=#B3B3B3;" parent="Rd3qPR3GxqKm1jp_kwzv-83" vertex="1">
-          <mxGeometry x="220" y="125.71428571428571" width="46.28" height="22.857142857142854" as="geometry" />
-        </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-85" value="Save" style="whiteSpace=wrap;html=1;strokeColor=default;fillColor=#B3B3B3;" parent="Rd3qPR3GxqKm1jp_kwzv-83" vertex="1">
           <mxGeometry x="276.62790697674404" y="125.71428571428571" width="36.279069767441854" height="22.857142857142854" as="geometry" />
         </mxCell>
@@ -419,9 +404,6 @@
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-92" value="" style="whiteSpace=wrap;html=1;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
           <mxGeometry x="185.93232558139528" y="140" width="267.55813953488365" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-94" value="&lt;font style=&quot;font-size: 13px&quot;&gt;Only displayed if used as an edit screen&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;position2=0.52;direction=west;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
-          <mxGeometry x="259.71000000000004" y="260" width="120" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-95" value="" style="whiteSpace=wrap;html=1;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
           <mxGeometry x="185.93232558139528" y="180" width="267.55813953488365" height="30" as="geometry" />
         </mxCell>
@@ -431,7 +413,7 @@
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-97" value="V" style="whiteSpace=wrap;html=1;fontSize=15;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
           <mxGeometry x="409.49" y="141" width="44" height="29" as="geometry" />
         </mxCell>
-        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-93" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Window will be used for both New and Edit. Either &quot;New&quot; or &quot;Edit&quot; will be shown depending on which action the window is used for. This window is used edit or create a new participant. It is also used to delete a participant when used as the edit screen.&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
+        <mxCell id="Rd3qPR3GxqKm1jp_kwzv-93" value="&lt;font style=&quot;font-size: 14px&quot;&gt;Window will be used for both New and Edit. Either &quot;New&quot; or &quot;Edit&quot; will be shown depending on which action the window is used for. This window is used edit or create a new participant.&amp;nbsp;&lt;/font&gt;" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=15;" parent="Rd3qPR3GxqKm1jp_kwzv-122" vertex="1">
           <mxGeometry y="-60" width="300" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Rd3qPR3GxqKm1jp_kwzv-134" value="These will be drop downs with lists of options based on the roles and people the user has created." style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontSize=14;rotation=90;size=20;position=0.38;base=9;align=center;horizontal=0;" parent="Rd3qPR3GxqKm1jp_kwzv-137" vertex="1">
