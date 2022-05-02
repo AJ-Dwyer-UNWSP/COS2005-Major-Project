@@ -20,6 +20,7 @@ class DataContext:
 
         # set up data fields
         self.__services = self.__service_handler.get_services()
+        # make sure that there are services before setting the current service and participants
         if len(self.__services) > 0:
             self.__curr_service = self.__services[0]
             self.__participants = self.__participant_handler.get_participants(self.__curr_service.get_service_id())

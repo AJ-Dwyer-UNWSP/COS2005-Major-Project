@@ -52,6 +52,7 @@ class ListPeopleView:
         self.__list_people_frame.pack(padx=10, pady=10)
         self.__btns_frame.pack(padx=10, pady=10)
 
+    # this happens when an item in the listbox is selected
     def __on_listbox_item_click(self, event):
         index = self.__list_people_box.curselection()[0]
         self.__curr_person = self.__lst_people[index]
@@ -81,6 +82,7 @@ class ListPeopleView:
     def __display_error(self):
         tkinter.messagebox.showinfo("Error", "There was an error. Please try again.")
 
+    # this is passed as a callback to the new_edit_people view; this executes when the new edit view makes an update
     def __update_data(self):
         self.__lst_people = self.__data_context.get_people()
         self.__list_people_var.set(self.__lst_people)

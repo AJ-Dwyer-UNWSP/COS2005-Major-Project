@@ -11,6 +11,7 @@ class ParticipantHandler:
         self.__cur.execute('PRAGMA foreign_keys=ON')
         self.__create_table()
 
+    # this function creates a table if it does not already exist; returns True is successful, otherwise False
     def __create_table(self):
         try:
             self.__cur.execute('''CREATE TABLE IF NOT EXISTS Participants 
@@ -25,6 +26,7 @@ class ParticipantHandler:
         except sqlite3.Error:
             return False
 
+    # this function creates a participant
     def create_participant(self, participant):
         try:
             self.__cur.execute('''INSERT INTO Participants
@@ -36,8 +38,12 @@ class ParticipantHandler:
         except sqlite3.Error:
             return False
 
+    # this function gets all participants for a service_id and returns the list of participants
+    # if there was an error it returns False
     def get_participants(self, service_id):
         try:
+            # this selects both the participant and the corresponding person name
+            # and role_id from the People and Roles tables
             self.__cur.execute('''SELECT Participants.service_id, People.last_name, People.first_name, 
                                     Participants.person_id, Roles.role_name, Participants.role_id
                                     FROM Participants, Roles, People
@@ -48,12 +54,14 @@ class ParticipantHandler:
 
             lst_participants = []
             for participant in res:
+                # Arguments: service_id, "last_name, first_name", person_id, roles_name, role_id
                 lst_participants.append(Participant(participant[0], (f"{participant[1]}, {participant[2]} "),
                                                     participant[3], participant[4], participant[5]))
             return lst_participants
         except sqlite3.Error:
             return False
 
+    # updates the role id of the participant
     def update_participant(self, participant):
         try:
             self.__cur.execute('''UPDATE Participants SET
@@ -65,9 +73,11 @@ class ParticipantHandler:
         except sqlite3.Error:
             return False
 
+    # deletes a participant with the corresponding person_id and service_id
     def delete_participant(self, person_id, service_id):
         try:
-            self.__cur.execute('''DELETE FROM Participants WHERE person_id = ? AND service_id = ?''', (person_id, service_id))
+            self.__cur.execute('''DELETE FROM Participants WHERE person_id = ? AND service_id = ?''',
+                               (person_id, service_id))
             return True
         except sqlite3.Error:
             return False

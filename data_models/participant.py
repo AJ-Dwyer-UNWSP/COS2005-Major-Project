@@ -2,6 +2,7 @@
 # Date: 4/26/22
 
 # this is the data model for the Participants
+# person_name is in the format 'last, first'
 class Participant:
     def __init__(self, service_id, person_name, person_id, role_name, role_id):
         self.__service_id = service_id
