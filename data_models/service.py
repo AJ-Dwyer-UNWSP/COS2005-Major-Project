@@ -31,3 +31,6 @@ class Service:
 
     def set_description(self, description):
         self.__description = description
+
+    def __str__(self):
+        return str(f"{self.get_service_name()} – {self.get_start_datetime()}")

@@ -20,10 +20,14 @@ class DataContext:
 
         # set up data fields
         self.__services = self.__service_handler.get_services()
-        self.__curr_service = self.__services[0] if len(self.__services) > 0 else None
+        if len(self.__services) > 0:
+            self.__curr_service = self.__services[0]
+            self.__participants = self.__participant_handler.get_participants(self.__curr_service.get_service_id())
+        else:
+            self.__curr_service = None
+            self.__participants = []
         self.__roles = self.__role_handler.get_roles()
         self.__people = self.__person_handler.get_people()
-        self.__participants = self.__participant_handler.get_participants()
 
     # SERVICES
     # returns the list of services

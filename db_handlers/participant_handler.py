@@ -36,15 +36,20 @@ class ParticipantHandler:
         except sqlite3.Error:
             return False
 
-    def get_participants(self):
+    def get_participants(self, service_id):
         try:
-            self.__cur.execute('''SELECT * FROM Participants''')
+            self.__cur.execute('''SELECT Participants.service_id, People.last_name, People.first_name, 
+                                    Participants.person_id, Roles.role_name, Participants.role_id
+                                    FROM Participants, Roles, People
+                                    WHERE Participants.service_id = ? AND 
+                                    Participants.role_id = Roles.role_id AND 
+                                    Participants.person_id = People.person_id''', (service_id,))
             res = self.__cur.fetchall()
 
             lst_participants = []
             for participant in res:
-                lst_participants.append(Participant(participant[0], participant[1], participant[2]))
-                print(Participant(participant[0], participant[1], participant[2]))
+                lst_participants.append(Participant(participant[0], (f"{participant[1]}, {participant[2]} "),
+                                                    participant[3], participant[4], participant[5]))
             return lst_participants
         except sqlite3.Error:
             return False
