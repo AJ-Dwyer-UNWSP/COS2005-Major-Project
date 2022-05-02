@@ -71,7 +71,9 @@ class ListPeopleView:
         # delete the current person if it is not None
         if self.__curr_person is not None:
             # delete the person and show a message if the operation failed
-            if not self.__data_context.delete_person(self.__curr_person):
+            if self.__data_context.delete_person(self.__curr_person):
+                self.__update_data()
+            else:
                 self.__display_error()
         else:
             tkinter.messagebox.showinfo("Error", "Please select an item before performing your operation.")

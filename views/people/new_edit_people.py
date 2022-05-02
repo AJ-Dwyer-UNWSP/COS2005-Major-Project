@@ -16,8 +16,8 @@ class NewEditPeopleView:
         # set up data fields
         self.__data_context = data_context
         self.__is_edit_view = is_edit_view
-        self.__on_data_updated = on_data_updated
         self.__cur_person = person
+        self.__on_data_updated = on_data_updated
         # set __first_name and __last_name
         if is_edit_view:  # then set to the person values passed in
             self.__first_name = person.get_first_name()
