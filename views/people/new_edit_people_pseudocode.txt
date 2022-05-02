@@ -1,0 +1,19 @@
+# Programmer: Andrew Dwyer
+# Date: 4/27/22
+# Program: new_edit_people_pseudocode.py
+
+Class NewEditPeopleView
+    def __init(data_context, is_edit_view, on_data_updated)
+        set the private data fields to the correct values
+        set up the window and frames
+        set up the elements in the Entry frames
+        set up the buttons in the bottom frame
+        pack the elements
+        if is in edit mode then set the values of the entry elements
+
+    def __save()
+        validate the entry values
+            if is in edit mode then update the person
+            else create a new person with the values
+            call the callback that the data was updated
+        if any errors occurred display an error

@@ -1,0 +1,32 @@
+# Programmer: Andrew Dwyer
+# Date: 4/27/22
+# Program: list_people_pseudocode.py
+
+Class ListPeopleView
+    def __init(data_context)
+        set the private data fields to the correct values
+        get the list of people and set the current person to None
+        set up the window and frames
+        set up the elements for the listbox including the scrollbar
+        attach the scrollbar to the listbox
+        set up the buttons in the bottom frame
+        pack the elements
+
+    def __on_listbox_item_click()
+        get the index of the selected item
+        set the current person to the person at the index from the list of people
+
+    def __new_person()
+        open the NewEditPersonView and pass __update_data as the callback
+
+    def __edit_person()
+        if there is a current person selected then open the edit view
+        display an error message if an error occurred
+
+    def __delete_curr_person()
+        if there is a current person selected then delete the person
+        display an error message if an error occurred
+
+    def __update_data()
+        update the list of people with the new data from the data_context
+        update the listbox with the new data
