@@ -46,6 +46,39 @@ class DataContext:
     # sets the current service
     def set_curr_service(self, service):
         self.__curr_service = service
+        self.__participants = self.__participant_handler.get_participants(self.__curr_service.get_service_id())
+
+    # Deletes a service. Returns True if successful otherwise False.
+    def delete_service(self, service):
+        # remove the service from the db
+        res = self.__service_handler.delete_service(service.get_service_id())
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # remove the service from the list of services
+        self.__services.remove(service)
+        # remove all the participants for the service
+        return True
+
+    def create_service(self, service):
+        # add the service to the db
+        res = self.__service_handler.create_service(service)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # add the service to the list of services
+        self.__services.append(service)
+        return True
+
+    def update_service(self, service):
+        # add the service to the db
+        res = self.__service_handler.update_service(service)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # update the list with the updated service at the old index
+        self.__services[self.__services.index(service)] = service
+        return True
 
     # ROLES
     def get_roles(self):

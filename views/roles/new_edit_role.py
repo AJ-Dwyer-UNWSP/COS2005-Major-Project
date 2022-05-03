@@ -58,7 +58,7 @@ class NewEditRolesView:
         # get the values from the entries
         self.__role_name = self.__role_name_entry.get()
         # validate the inputs
-        if self.__role_name != '' and self.__role_name != '':  # then the inputs are valid
+        if self.__role_name != '':  # then the inputs are valid
             if self.__is_edit_view == True:  # then in edit mode and need to update role
                 self.__cur_role.set_role_name(self.__role_name)
                 # update and display a message if the operation failed

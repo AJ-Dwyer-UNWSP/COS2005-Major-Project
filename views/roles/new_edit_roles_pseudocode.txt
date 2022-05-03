@@ -3,7 +3,7 @@
 # Program: new_edit_roles_pseudocode.py
 
 Class NewEditRolesView
-    def __init(data_context, is_edit_view, on_data_updated)
+    def __init(data_context, is_edit_view, role, on_data_updated)
         set the private data fields to the correct values
         set up the window and frames
         set up the elements in the Entry frame
