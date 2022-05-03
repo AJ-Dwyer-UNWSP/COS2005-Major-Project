@@ -18,3 +18,5 @@ class Role:
     def set_role_name(self, name):
         self.__role_name = name
 
+    def __str__(self):
+        return str(self.__role_name)

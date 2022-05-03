@@ -51,6 +51,37 @@ class DataContext:
     def get_roles(self):
         return self.__roles
 
+    # Deletes a role. Returns True if successful otherwise False.
+    def delete_role(self, role):
+        # remove the role from the db
+        res = self.__role_handler.delete_role(role.get_role_id())
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # remove the role from the list of roles
+        self.__roles.remove(role)
+        return True
+
+    def create_role(self, role):
+        # add the role to the db
+        res = self.__role_handler.create_role(role)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # add the role to the list of roles
+        self.__roles.append(role)
+        return True
+
+    def update_role(self, role):
+        # add the role to the db
+        res = self.__role_handler.update_role(role)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # update the list with the updated role at the old index
+        self.__roles[self.__roles.index(role)] = role
+        return True
+
     # PARTICIPANTS
     def get_participants(self):
         return self.__participants

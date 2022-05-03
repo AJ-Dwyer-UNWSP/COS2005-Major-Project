@@ -54,8 +54,11 @@ class ListPeopleView:
 
     # this happens when an item in the listbox is selected
     def __on_listbox_item_click(self, event):
-        index = self.__list_people_box.curselection()[0]
-        self.__curr_person = self.__lst_people[index]
+        try:
+            index = self.__list_people_box.curselection()[0]
+            self.__curr_person = self.__lst_people[index]
+        except IndexError:
+            self.__curr_person = None
 
     def __new_person(self):
         # open the new person view and set is_edit_view to false and person to None

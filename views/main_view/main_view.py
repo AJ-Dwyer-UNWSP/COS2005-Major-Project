@@ -3,6 +3,7 @@
 
 import tkinter
 from views.people.list_people import ListPeopleView
+from views.roles.list_roles import ListRolesView
 from data_context import DataContext
 
 
@@ -52,10 +53,10 @@ class MainView:
         self.__main_window.mainloop()
 
     def __setup_menu_btns(self):
-        self.__new_service_btn = tkinter.Button(self.__menu_frame, text="New Service")
-        self.__delete_service_btn = tkinter.Button(self.__menu_frame, text="Delete Service")
-        self.__edit_service_btn = tkinter.Button(self.__menu_frame, text="Edit Service")
-        self.__view_roles_btn = tkinter.Button(self.__menu_frame, text="View Roles")
+        self.__new_service_btn = tkinter.Button(self.__menu_frame, text="New Service", command=self.__new_service)
+        self.__delete_service_btn = tkinter.Button(self.__menu_frame, text="Delete Service", command=self.__delete_service)
+        self.__edit_service_btn = tkinter.Button(self.__menu_frame, text="Edit Service", command=self.__edit_service)
+        self.__view_roles_btn = tkinter.Button(self.__menu_frame, text="View Roles", command=self.__view_roles)
         self.__view_people_btn = tkinter.Button(self.__menu_frame, text="View People", command=self.__view_people)
         self.__quit_btn = tkinter.Button(self.__menu_frame, text="Quit", command=self.__main_window.destroy)
 
@@ -146,8 +147,7 @@ class MainView:
         pass
 
     def __view_roles(self):
-        # navigate to the view roles
-        pass
+        ListRolesView(self.__data_context)
 
     def __view_people(self):
         ListPeopleView(self.__data_context)

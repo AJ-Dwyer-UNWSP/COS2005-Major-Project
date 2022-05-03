@@ -1,0 +1,33 @@
+# Programmer: Andrew Dwyer
+# Date: 4/27/22
+# Program: list_roles_pseudocode.py
+
+Class ListRolesView
+    def __init(data_context)
+        set the private data fields to the correct values
+        get the list of role and set the current role to None
+        set up the window and frames
+        set up the elements for the listbox including the scrollbar
+        attach the scrollbar to the listbox
+        set up the buttons in the bottom frame
+        pack the elements
+
+    def __on_listbox_item_click()
+        get the index of the selected item
+        set the current role to the role at the index from the list of roles
+        catch any errors
+
+    def __new_role()
+        open the NewEditRoleView and pass __update_data as the callback
+
+    def __edit_role()
+        if there is a current role selected then open the edit view
+        display an error message if an error occurred
+
+    def __delete_curr_role()
+        if there is a current role selected then delete the role
+        display an error message if an error occurred
+
+    def __update_data()
+        update the list of roles with the new data from the data_context
+        update the listbox with the new data
