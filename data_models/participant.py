@@ -19,13 +19,13 @@ class Participant:
         return self.__person_name
 
     def get_person_id(self):
-        return self.__person_name
+        return self.__person_id
 
     def get_role_name(self):
         return self.__role_name
 
     def get_role_id(self):
-        return self.__role_name
+        return self.__role_id
 
     # setters
     def set_service_id(self, service_id):

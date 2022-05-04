@@ -1,7 +1,6 @@
 # Programmer: Andrew Dwyer
 # Date: 4/27/22
 
-from data_models.person import Person
 import db_handlers.service_handler as service_handler
 import db_handlers.role_handler as role_handler
 import db_handlers.person_handler as person_handler
@@ -37,7 +36,7 @@ class DataContext:
 
     # gets the current service
     def get_curr_service(self):
-        pass
+        return self.__curr_service
 
     # sets the list of services
     def set_services(self, services):
@@ -57,7 +56,7 @@ class DataContext:
             return False
         # remove the service from the list of services
         self.__services.remove(service)
-        # remove all the participants for the service
+        self.set_curr_service(self.__services[0])
         return True
 
     def create_service(self, service):
@@ -118,6 +117,38 @@ class DataContext:
     # PARTICIPANTS
     def get_participants(self):
         return self.__participants
+
+    # Deletes a participant. Returns True if successful otherwise False.
+    def delete_participant(self, participant):
+        # remove the participant from the db
+        res = self.__participant_handler.delete_participant(participant.get_person_id(), participant.get_service_id())
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # remove the participant from the list of participants
+        self.__participants.remove(participant)
+        # remove all the participants for the participant
+        return True
+
+    def create_participant(self, participant):
+        # add the participant to the db
+        res = self.__participant_handler.create_participant(participant)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # add the participant to the list of participants
+        self.__participants.append(participant)
+        return True
+
+    def update_participant(self, participant):
+        # add the participant to the db
+        res = self.__participant_handler.update_participant(participant)
+        # check that the operation didn't fail
+        if not res:
+            return False
+        # update the list with the updated participant at the old index
+        self.__participants[self.__participants.index(participant)] = participant
+        return True
 
     # PEOPLE
     def get_people(self):

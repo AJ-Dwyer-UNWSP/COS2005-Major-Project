@@ -9,11 +9,12 @@ import tkinter.messagebox
 
 
 class ListRolesView:
-    def __init__(self, data_context: DataContext):
+    def __init__(self, data_context: DataContext, update_data):
         # set up fields
         self.__data_context = data_context
         self.__lst_roles = self.__data_context.get_roles()
         self.__curr_role = None
+        self.__update_parent_data = update_data
 
         # set up view
         self.__main_window = tkinter.Toplevel()
@@ -89,3 +90,4 @@ class ListRolesView:
     def __update_data(self):
         self.__lst_roles = self.__data_context.get_roles()
         self.__list_roles_var.set(self.__lst_roles)
+        self.__update_parent_data()

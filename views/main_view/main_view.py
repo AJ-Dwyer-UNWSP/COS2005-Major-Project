@@ -5,6 +5,7 @@ import tkinter
 from views.people.list_people import ListPeopleView
 from views.roles.list_roles import ListRolesView
 from views.services.new_edit_service import NewEditServiceView
+from views.participants.new_edit_participant import NewEditParticipantView
 from data_context import DataContext
 import tkinter.messagebox
 
@@ -162,30 +163,38 @@ class MainView:
             tkinter.messagebox.showinfo("Error", "Please select an item before performing your operation.")
 
     def __delete_service(self):
-        # delete service
-        # set new current service
-        pass
+        if not self.__data_context.delete_service(self.__curr_service):
+            self.__display_error()
+        else:
+            self.__on_update()
 
     def __view_roles(self):
-        ListRolesView(self.__data_context)
+        ListRolesView(self.__data_context, self.__on_update)
 
     def __view_people(self):
-        ListPeopleView(self.__data_context)
+        ListPeopleView(self.__data_context, self.__on_update)
 
-    def __add_participant(self, event):
-        pass
+    def __add_participant(self):
+        NewEditParticipantView(self.__data_context, False, None, self.__on_update)
 
-    def __edit_participant(self, event):
-        pass
+    def __edit_participant(self):
+        NewEditParticipantView(self.__data_context, True, self.__curr_participant, self.__on_update)
 
-    def __delete_participant(self, event):
-        pass
+    def __delete_participant(self):
+        if self.__curr_participant:
+            if not self.__data_context.delete_participant(self.__curr_participant):
+                self.__display_error()
+            else:
+                self.__on_update()
+
+    def __display_error(self):
+        tkinter.messagebox.showinfo("Error", "There was an error. Please try again.")
 
     def __on_update(self):
         # update the data
         self.__lst_services = self.__data_context.get_services()
         if len(self.__lst_services) > 0:
-            self.__curr_service = self.__lst_services[0]
+            self.__curr_service = self.__data_context.get_curr_service()
             self.__data_context.set_curr_service(self.__curr_service)
             self.__lst_participants = self.__data_context.get_participants()
             self.__curr_participant = self.__lst_participants[0] if len(self.__lst_participants) > 0 else None

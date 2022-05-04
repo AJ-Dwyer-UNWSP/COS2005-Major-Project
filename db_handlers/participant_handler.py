@@ -19,9 +19,9 @@ class ParticipantHandler:
                                                         service_id INTEGER NOT NULL,
                                                         role_id INTEGER,
                                                         PRIMARY KEY (person_id, service_id),
-                                                        FOREIGN KEY (person_id) REFERENCES People(person_id),
-                                                        FOREIGN KEY (service_id) REFERENCES Services(service_id),
-                                                        FOREIGN KEY(role_id) REFERENCES Roles(role_id))''')
+                                                        FOREIGN KEY (person_id) REFERENCES People(person_id) ON DELETE CASCADE,
+                                                        FOREIGN KEY (service_id) REFERENCES Services(service_id) ON DELETE CASCADE,
+                                                        FOREIGN KEY(role_id) REFERENCES Roles(role_id) ON DELETE CASCADE)''')
             return True
         except sqlite3.Error:
             return False

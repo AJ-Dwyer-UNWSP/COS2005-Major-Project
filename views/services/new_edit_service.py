@@ -18,7 +18,6 @@ class NewEditServiceView:
         self.__is_edit_view = is_edit_view
         self.__cur_service = service
         self.__on_data_updated = on_data_updated
-        # set __first_name and __last_name
         if is_edit_view:  # then set to the service values passed in
             self.__service_name = service.get_service_name()
             self.__desc = service.get_description()
