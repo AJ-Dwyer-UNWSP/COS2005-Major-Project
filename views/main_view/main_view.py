@@ -139,8 +139,7 @@ class MainView:
             if len(index) != 0:
                 self.__curr_service = self.__lst_services[index[0]]
                 self.__data_context.set_curr_service(self.__curr_service)
-        except IndexError as err:  # catch any possible errors
-            print(err)
+        except IndexError:  # catch any possible errors
             self.__curr_service = self.__lst_services[0]
             self.__data_context.set_curr_service(self.__curr_service)
         finally:  # set the participants and update the UI

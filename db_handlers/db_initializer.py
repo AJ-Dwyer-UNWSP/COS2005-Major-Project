@@ -9,8 +9,7 @@ class DBInitializer:
         try:
             self.__conn = sqlite3.connect("./data.db")
             self.__cur = self.__conn.cursor()
-        except sqlite3.Error as err:
-            print(err)
+        except sqlite3.Error:
             print("There was an error connecting to the db")
 
     def close(self):

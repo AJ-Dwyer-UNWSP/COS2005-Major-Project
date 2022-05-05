@@ -4,7 +4,6 @@
 import tkinter
 from data_context import DataContext
 from data_models.participant import Participant
-import random
 import tkinter.messagebox
 
 
@@ -71,7 +70,7 @@ class NewEditParticipantView:
         self.__role_frame.pack(padx=10, pady=10, fill="x", expand=True)
         self.__btn_frame.pack(padx=10, pady=10, anchor="e")
 
-        # if is in edit mode, then set the value of the entries
+        # if is in edit mode, then set the value of the option menus and disable the person option menu
         if is_edit_view:
             self.__selected_person_var.set(self.__person_name)
             self.__selected_role_var.set(self.__role_name)
