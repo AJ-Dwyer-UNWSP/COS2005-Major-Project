@@ -33,4 +33,5 @@ class Service:
         self.__description = description
 
     def __str__(self):
+        # in the format 'service_name – datetime'
         return str(f"{self.get_service_name()} – {self.get_start_datetime()}")

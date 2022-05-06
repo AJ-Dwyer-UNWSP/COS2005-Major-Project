@@ -21,7 +21,7 @@ class MainView:
             self.__data_context.set_curr_service(self.__curr_service)
             self.__lst_participants = self.__data_context.get_participants()
             self.__curr_participant = self.__lst_participants[0] if len(self.__lst_participants) > 0 else None
-        else:
+        else:  # set the default values
             self.__curr_service = None
             self.__lst_participants = []
             self.__curr_participant = None
@@ -59,6 +59,7 @@ class MainView:
         # start the mainloop
         self.__main_window.mainloop()
 
+    # this function creates and packs the menu buttons
     def __setup_menu_btns(self):
         self.__new_service_btn = tkinter.Button(self.__menu_frame, text="New Service", command=self.__new_service)
         self.__delete_service_btn = tkinter.Button(self.__menu_frame, text="Delete Service", command=self.__delete_service)
@@ -75,12 +76,13 @@ class MainView:
         self.__view_people_btn.pack(side="left")
         self.__quit_btn.pack(side="left")
 
+    # this function sets up the service listbox
     def __setup_list_box(self):
         self.__list_services_var = tkinter.StringVar()
-        self.__list_services_var.set(self.__lst_services)
+        self.__list_services_var.set(self.__lst_services)  # set the values that go in the listbox
         self.__list_services_box = tkinter.Listbox(self.__list_services_frame, listvariable=self.__list_services_var)
         # bind to the event that an item is clicked in the listbox
-        self.__list_services_box.bind("<<ListboxSelect>>", self.__on_listbox_item_click)
+        self.__list_services_box.bind("<<ListboxSelect>>", self.__on_service_listbox_item_click)
         # create the scrollbar
         self.__scroll_bar = tkinter.Scrollbar(self.__list_services_frame, orient=tkinter.VERTICAL,
                                               command=self.__list_services_box.yview)
@@ -91,6 +93,7 @@ class MainView:
         self.__list_services_box.pack(side="left", fill="y")
         self.__scroll_bar.pack(side="right", fill=tkinter.Y)
 
+    # this function creates and packs the main service content part of the screen
     def __setup_service_content(self):
         # set default text if the values are None
         self.__serv_title_var = tkinter.StringVar()
@@ -131,10 +134,11 @@ class MainView:
         self.__edit_prtcpt_btn.pack(side="left")
         self.__delete_prtcpt_btn.pack(side="left")
 
-    def __on_listbox_item_click(self, event):
+    # this is an event for the service listbox item clicked and the current service needs to be updated
+    def __on_service_listbox_item_click(self, event):
         try:
             index = self.__list_services_box.curselection()
-            # if the lenght of index is 0 than it means the user is editing on another screen
+            # if the length of index is 0 than it means the user is editing on another screen
             # and the curr service shouldn't change
             if len(index) != 0:
                 self.__curr_service = self.__lst_services[index[0]]
@@ -147,49 +151,60 @@ class MainView:
             self.__curr_participant = self.__lst_participants[0] if len(self.__lst_participants) > 0 else None
             self.__update_UI()
 
+    # this an event for the participants listbox item clicked
+    # updates the current participant
     def __on_prtcpts_listbox_item_click(self, event):
         index = self.__list_prtcpt_box.curselection()[0]
         self.__curr_participant = self.__lst_participants[index]
 
+    # the new service btn was clicked and the NewEditServiceView needs to be opened
     def __new_service(self):
-        NewEditServiceView(self.__data_context, False, None, self.__on_update)
+        NewEditServiceView(self.__data_context, False, None, self.__update_data)
 
+    # the edit service btn was clicked
     def __edit_service(self):
         # open the edit view if the current person is not None to avoid an Exception
         if self.__curr_service is not None:
-            NewEditServiceView(self.__data_context, True, self.__curr_service, self.__on_update)
+            NewEditServiceView(self.__data_context, True, self.__curr_service, self.__update_data)
         else:
             tkinter.messagebox.showinfo("Error", "Please select an item before performing your operation.")
 
+    # the delete service btn was clicked
     def __delete_service(self):
         if not self.__data_context.delete_service(self.__curr_service):
             self.__display_error()
         else:
-            self.__on_update()
+            self.__update_data()
 
+    # open the ListRolesView because the view roles btn was clicked
     def __view_roles(self):
-        ListRolesView(self.__data_context, self.__on_update)
+        ListRolesView(self.__data_context, self.__update_data)
 
+    # open the ListPeopleView because the view people btn was clicked
     def __view_people(self):
-        ListPeopleView(self.__data_context, self.__on_update)
+        ListPeopleView(self.__data_context, self.__update_data)
 
+    # open the new participant view
     def __add_participant(self):
-        NewEditParticipantView(self.__data_context, False, None, self.__on_update)
+        NewEditParticipantView(self.__data_context, False, None, self.__update_data)
 
+    # open the edit participant view
     def __edit_participant(self):
-        NewEditParticipantView(self.__data_context, True, self.__curr_participant, self.__on_update)
+        NewEditParticipantView(self.__data_context, True, self.__curr_participant, self.__update_data)
 
+    # delete the current participant
     def __delete_participant(self):
         if self.__curr_participant:
             if not self.__data_context.delete_participant(self.__curr_participant):
                 self.__display_error()
-            else:
-                self.__on_update()
+            else:  # the operation was successful so update data fields and UI
+                self.__update_data()
 
     def __display_error(self):
         tkinter.messagebox.showinfo("Error", "There was an error. Please try again.")
 
-    def __on_update(self):
+    # this function updates the data fields and the UI
+    def __update_data(self):
         # update the data
         self.__lst_services = self.__data_context.get_services()
         if len(self.__lst_services) > 0:
@@ -203,6 +218,7 @@ class MainView:
             self.__curr_participant = None
         self.__update_UI()
 
+    # this function updates the UI
     def __update_UI(self):
         self.__list_services_var.set(self.__lst_services)
         self.__list_prtcpts_var.set(self.__lst_participants)

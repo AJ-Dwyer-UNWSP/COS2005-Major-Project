@@ -1,6 +1,6 @@
 # Programmer: Andrew Dwyer
 # Date: 5/3/22
-# Program: new_edit_participant_pseudocode.py
+# Program: new_edit_participant.py
 
 Class NewEditParticipantView
     def __init(data_context, is_edit_view, participant, on_data_updated)

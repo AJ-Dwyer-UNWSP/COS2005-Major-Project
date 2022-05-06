@@ -10,6 +10,7 @@ class ServiceHandler:
         self.__cur = cur
         self.__create_table()
 
+    # creates the table if it doesn't already exist
     def __create_table(self):
         try:
             self.__cur.execute('''CREATE TABLE IF NOT EXISTS Services (service_id INTEGER PRIMARY KEY NOT NULL, 
@@ -20,6 +21,7 @@ class ServiceHandler:
         except sqlite3.Error:
             return False
 
+    # creates a new service
     def create_service(self, service):
         try:
             self.__cur.execute('''INSERT INTO Services
@@ -31,6 +33,7 @@ class ServiceHandler:
         except sqlite3.Error:
             return False
 
+    # returns all the service from the db
     def get_services(self):
         try:
             self.__cur.execute('''SELECT * FROM Services''')
@@ -38,11 +41,13 @@ class ServiceHandler:
 
             lst_services = []
             for service in res:
+                # turn the returned values into an instance of a Service and add to the list
                 lst_services.append(Service(service[0], service[1], service[2], service[3]))
             return lst_services
         except sqlite3.Error:
             return False
 
+    # update the service
     def update_service(self, service):
         try:
             self.__cur.execute('''UPDATE Services SET
@@ -56,6 +61,7 @@ class ServiceHandler:
         except sqlite3.Error:
             return False
 
+    # Delete the service
     def delete_service(self, service_id):
         try:
             self.__cur.execute('''DELETE FROM Services WHERE service_id = ?''', (service_id,))

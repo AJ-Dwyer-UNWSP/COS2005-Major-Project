@@ -26,4 +26,5 @@ class Person:
         self.__first_name = first_name
 
     def __str__(self):
+        # in the format 'last_name, first_name'
         return f"{self.get_last_name()}, {self.get_first_name()}"

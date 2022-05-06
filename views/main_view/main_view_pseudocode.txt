@@ -20,10 +20,10 @@ Class MainView
 
     def menu btn click():
         open the correct view
-        or delete the current selected item and update the UI
+        or delete the current service/participant and update the UI
 
     this function will be used as a callback
     when data is updated on other views
-    def __on_update():
+    def __update_data():
         reset the data fields to the updated values
         update the UI to reflect the updated data

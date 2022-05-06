@@ -8,5 +8,5 @@ Class DataContext
 
     methods to create, read, update, and delete
     services, roles, people, and participants
-    methods call the db operation and preform the operation
+    methods call both the db operation and preform the operation
     on the local data

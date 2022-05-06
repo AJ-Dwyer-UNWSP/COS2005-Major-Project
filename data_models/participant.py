@@ -5,6 +5,7 @@
 # person_name is in the format 'last, first'
 class Participant:
     def __init__(self, service_id, person_name, person_id, role_name, role_id):
+        # set the data fields
         self.__service_id = service_id
         self.__person_name = person_name
         self.__person_id = person_id
@@ -44,4 +45,5 @@ class Participant:
         self.__role_id = role_id
 
     def __str__(self):
+        # in the format 'last name, first name – role name'
         return f'{self.get_person_name()} – {self.get_role_name()}'

@@ -1,6 +1,6 @@
 # Programmer: Andrew Dwyer
 # Date: 4/27/22
-# Program: list_people_pseudocode.py
+# Program: list_people.py
 
 Class ListPeopleView
     def __init(data_context)

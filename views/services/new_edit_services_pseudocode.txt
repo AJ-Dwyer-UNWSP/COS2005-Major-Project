@@ -1,6 +1,6 @@
 # Programmer: Andrew Dwyer
 # Date: 5/3/22
-# Program: new_edit_services_pseudocode.py
+# Program: new_edit_services.py
 
 Class NewEditServicesView
     def __init(data_context, is_edit_view, service, on_data_updated)

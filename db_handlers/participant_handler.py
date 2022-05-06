@@ -5,10 +5,10 @@ import sqlite3
 from data_models.participant import Participant
 
 
+# this class handles the db operations for the Participants table
 class ParticipantHandler:
     def __init__(self, cur: sqlite3.Cursor):
         self.__cur = cur
-        self.__cur.execute('PRAGMA foreign_keys=ON')
         self.__create_table()
 
     # this function creates a table if it does not already exist; returns True is successful, otherwise False
