@@ -1,0 +1,19 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: role_handler.py
+
+Class RoleHandler
+    def __init()
+        create the table if it doesn't exist
+
+    def create_role(role)
+        run the SQL statement to create a new role
+
+    def get_roles()
+        query the database to get all roles
+
+    def update_role(role)
+        update the role in the db
+
+    def delete_role(role_id)
+        run the SQL needed to delete the role from the db

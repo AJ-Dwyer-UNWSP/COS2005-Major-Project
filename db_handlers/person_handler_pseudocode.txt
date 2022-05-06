@@ -1,0 +1,19 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: person_handler.py
+
+Class PersonHandler
+    def __init()
+        create the table if it doesn't exist
+
+    def create_person(person)
+        run the SQL statement to create a new person
+
+    def get_people()
+        query the database to return all the people
+
+    def update_person(person)
+        update the person in the db
+
+    def delete_person(person_id)
+        run the SQL needed to delete the person from the db

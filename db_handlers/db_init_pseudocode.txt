@@ -1,0 +1,14 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: db_initializer.py
+
+Class DBInitializer
+    def __init__()
+        start the connection to the db
+
+    def close()
+        closes the connection to the db
+
+    def get_cur():
+        return the db cursor
+

@@ -1,0 +1,12 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: participant_handler.py
+
+Class DataContext
+    def __init()
+        set up instances of the db handler
+
+    methods to create, read, update, and delete
+    services, roles, people, and participants
+    methods call the db operation and preform the operation
+    on the local data

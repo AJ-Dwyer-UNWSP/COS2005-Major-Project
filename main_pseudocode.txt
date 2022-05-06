@@ -1,0 +1,10 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: main.py
+
+def main()
+    create a db initializer and data context
+    load the main view
+    close the db once the app is closed
+
+run main if the program isn't imported as a module

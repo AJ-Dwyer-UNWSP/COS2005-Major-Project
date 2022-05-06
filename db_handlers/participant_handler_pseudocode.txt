@@ -1,0 +1,19 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: participant_handler.py
+
+Class ParticipantHandler
+    def __init()
+        create the table if it doesn't exist
+
+    def create_participant(participant)
+        run the SQL statement to create a new participant
+
+    def get_participants(service_id)
+        query the database to get all participants with the service_id
+
+    def update_participant(participant)
+        update the participant in the db
+
+    def delete_participant(person_id, service_id)
+        run the SQL needed to delete the participant from the db

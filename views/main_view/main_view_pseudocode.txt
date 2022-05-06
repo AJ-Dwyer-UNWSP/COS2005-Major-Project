@@ -1,0 +1,29 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: main_view_pseudocode.py
+
+Class MainView
+    def __init(data_context)
+        set the private data fields to the correct values
+        set up the window and frames
+        set up the menu bar elements
+        set up the services listbox elements
+        set up the service information elements
+        set up the participant listbox elements
+        set up the participant btns
+        pack the elements
+        start the mainloop
+
+    def listbox clicked events()
+        set the correct current service/participant
+        update any UI if necessary
+
+    def menu btn click():
+        open the correct view
+        or delete the current selected item and update the UI
+
+    this function will be used as a callback
+    when data is updated on other views
+    def __on_update():
+        reset the data fields to the updated values
+        update the UI to reflect the updated data

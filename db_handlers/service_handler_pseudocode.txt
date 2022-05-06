@@ -1,0 +1,19 @@
+# Programmer: Andrew Dwyer
+# Date: 5/3/22
+# Program: service_handler.py
+
+Class ServiceHandler
+    def __init()
+        create the table if it doesn't exist
+
+    def create_service(service)
+        run the SQL statement to create a new service
+
+    def get_services()
+        query the database to get all the services
+
+    def update_service(service)
+        updates the service in the db
+
+    def delete_service(service_id)
+        runs the SQL needed to delete the service from the db
