@@ -154,8 +154,11 @@ class MainView:
     # this an event for the participants listbox item clicked
     # updates the current participant
     def __on_prtcpts_listbox_item_click(self, event):
-        index = self.__list_prtcpt_box.curselection()[0]
-        self.__curr_participant = self.__lst_participants[index]
+        try:
+            index = self.__list_prtcpt_box.curselection()[0]
+            self.__curr_participant = self.__lst_participants[index]
+        except IndexError:
+            self.__curr_participant = None
 
     # the new service btn was clicked and the NewEditServiceView needs to be opened
     def __new_service(self):
@@ -190,7 +193,10 @@ class MainView:
 
     # open the edit participant view
     def __edit_participant(self):
-        NewEditParticipantView(self.__data_context, True, self.__curr_participant, self.__update_data)
+        if self.__curr_participant is not None:
+            NewEditParticipantView(self.__data_context, True, self.__curr_participant, self.__update_data)
+        else:
+            tkinter.messagebox.showinfo("Error", "Please select an item before performing your operation.")
 
     # delete the current participant
     def __delete_participant(self):
@@ -199,6 +205,8 @@ class MainView:
                 self.__display_error()
             else:  # the operation was successful so update data fields and UI
                 self.__update_data()
+        else:
+            tkinter.messagebox.showinfo("Error", "Please select an item before performing your operation.")
 
     def __display_error(self):
         tkinter.messagebox.showinfo("Error", "There was an error. Please try again.")
@@ -222,5 +230,9 @@ class MainView:
     def __update_UI(self):
         self.__list_services_var.set(self.__lst_services)
         self.__list_prtcpts_var.set(self.__lst_participants)
-        self.__serv_title_var.set(self.__curr_service.get_service_name())
-        self.__serv_desc_var.set(self.__curr_service.get_description())
+        if self.__curr_service is not None:
+            self.__serv_title_var.set(self.__curr_service.get_service_name())
+            self.__serv_desc_var.set(self.__curr_service.get_description())
+        else:
+            self.__serv_title_var.set('')
+            self.__serv_desc_var.set('')

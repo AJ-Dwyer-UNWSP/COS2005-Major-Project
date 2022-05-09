@@ -45,7 +45,10 @@ class DataContext:
     # sets the current service
     def set_curr_service(self, service):
         self.__curr_service = service
-        self.__participants = self.__participant_handler.get_participants(self.__curr_service.get_service_id())
+        if service is not None:
+            self.__participants = self.__participant_handler.get_participants(self.__curr_service.get_service_id())
+        else:
+            self.__participants = []
 
     # Deletes a service. Returns True if successful otherwise False.
     def delete_service(self, service):
@@ -56,7 +59,10 @@ class DataContext:
             return False
         # remove the service from the list of services
         self.__services.remove(service)
-        self.set_curr_service(self.__services[0])
+        if len(self.__services) > 0:
+            self.set_curr_service(self.__services[0])
+        else:
+            self.set_curr_service(None)
         return True
 
     def create_service(self, service):
